@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hell and Heaven</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="flipbook">
+        <div class="page" id="page1">
+            <p>Click sobre la image si quieres ver su animacion</p>
+            <img src="portadav2.jpeg" alt="Imagen de la Página 1" loading="lazy" onclick="showVideo('video1.mp4', this)">
+            <video class="video" id="video1" controls autoplay loop muted controls>
+                <source src="portada.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <div class="description">Hell And Heaven</div>
+        </div>
+        <div class="page" id="page2">
+            <img src="prologo.jpg" alt="Imagen de la Página 2" loading="lazy" onclick="showVideo('video2.mp4', this)">
+            <video class="video" id="video2" controls autoplay loop muted controls>
+                <source src="prologo.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <div class="description">Prologo</div>
+        </div>
+        <div class="page" id="page3">
+            <img src="./introduccion/introduccion.jpg" alt="Imagen de la Página 3" loading="lazy" onclick="showVideo('video3.mp4', this)">
+            <video class="video" id="video3" controls autoplay loop muted controls>
+                <source src="./introduccion/introduccion.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <div class="description">Introduccion</div>
+        </div>
+        <div class="page" id="page4">
+            <img src="./introduccion/beast.jpeg" alt="Imagen de la Página 4" loading="lazy" onclick="showVideo('video4.mp4', this)">
+            <video class="video" id="video4" controls autoplay loop muted controls>
+                <source src="./introduccion/beast.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <div class="description">Reino de las Bestias</div>
+        </div>
+        <div class="page" id="page5">
+            <img src="./introduccion/human.jpg" alt="Imagen de la Página 5" loading="lazy" onclick="showVideo('video5.mp4', this)">
+            <video class="video" id="video5" controls autoplay loop muted controls>
+                <source src="./introduccion/human.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <div class="description">Reino de los homosapiens</div>
+        </div>
+        <div class="page" id="page6">
+            <img src="./introduccion/droids.jpeg" alt="Imagen de la Página 6" loading="lazy" onclick="showVideo('video6.mp4', this)">
+            <video class="video" id="video6" controls autoplay loop muted controls>
+                <source src="./introduccion/droids.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <div class="description">Reino de las Maquinas</div>
+        </div>
+    </div>
+    <div class="controls">
+        <div class="text-box" id="textBox"></div>
+        <p id="paragraph" class="paragraph"></p>
+        <button id="prevButton" aria-label="Página anterior">Anterior</button>
+        <span class="page-number">Página <span id="pageNumber">1</span> de 6</span>
+        <button id="nextButton" aria-label="Página siguiente">Siguiente</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
