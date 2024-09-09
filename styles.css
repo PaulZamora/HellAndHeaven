@@ -4,7 +4,7 @@ body {
     flex-direction: column; /* Coloca los elementos en una columna, uno debajo del otro */
     justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
     align-items: center;
-    gap: 20px; /* Espacio entre cada elemento */
+    gap: 10px; /* Espacio entre cada elemento */
     height: 100vh;
     margin: 0;
     background-color: #302c2c;
@@ -26,13 +26,13 @@ body {
 }
 
 .text-box {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 90%; /* Ajusta el ancho para que coincida con la flipbook */
     max-width: 600px;
 }
 
 #paragraph {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 90%; /* Ajusta el ancho para que coincida con la flipbook */
     max-width: 600px;
 }
