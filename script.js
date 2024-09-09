@@ -1,6 +1,7 @@
 // Inicializa el índice de la página actual
 let currentPage = 0;
 const totalPages = document.querySelectorAll('.page').length;
+let isMuted = false; // Variable para controlar si la voz está silenciada
 
 // Textos descriptivos para cada página
 const descriptions = [
@@ -82,6 +83,7 @@ function updateParagraph(text) {
     type();
 }
 
+
 // Función para leer el texto en voz alta, fragmentado si es necesario
 function speakText(text) {
     const synth = window.speechSynthesis;
@@ -107,6 +109,20 @@ function speakText(text) {
     }
 
     speakNext(); // Inicia la reproducción
+}
+
+// Función para silenciar/activar la voz
+function toggleMute() {
+    isMuted = !isMuted; // Cambiar entre silenciado/no silenciado
+    const muteButton = document.getElementById('muteButton');
+    muteButton.textContent = isMuted ? "Activar Voz" : "Silenciar Voz";
+
+    if (isMuted) {
+        window.speechSynthesis.cancel(); // Detener cualquier voz en progreso
+    } else {
+        // Reactivar la voz para la página actual si no está silenciado
+        speakText(paragraphs[currentPage]);
+    }
 }
 
 // Función para mostrar el video y ocultar la imagen
@@ -157,6 +173,9 @@ mc.on('swiperight', function() {
 // Configuración de los botones de navegación
 document.getElementById('nextButton').addEventListener('click', nextPage);
 document.getElementById('prevButton').addEventListener('click', prevPage);
+
+// Configurar el botón de silenciar/activar voz
+document.getElementById('muteButton').addEventListener('click', toggleMute);
 
 // Inicializa la vista de las páginas
 updatePages();
